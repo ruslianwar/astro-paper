@@ -33,9 +33,9 @@ I would recommend reading this overview by Snipcart or this intro to SSGs by Net
 
 Here are some benefits of using SSGs that were important to me when I was choosing between a website builder and a SSG:
 
-Access to my content at all times in a convenient format. Many website builders offer an easy drag and drop interface, but it might be difficult to transfer the content of your website from one platform to another and preserve the original formatting including images, text formatting, links, etc. It was also not clear what happens to my content if a website builder ceases to exist at some point. With an SSG all my images and posts (in human-readable Markdown format) are saved locally on my computer, and I can always move them to another platform, if needed.
-Fast load times. Every time you request a page of a traditionally built website, it is built and loaded after the request is submitted. That might result in longer loading times. As I mentioned earlier, SSGs serve pre-built pages that significantly reduces the load time, even for content-heavy websites.
-Security. As the infrastructure for serving a static website is simplified compared to a traditionally built website, there are fewer parts involved in building and serving it. Therefore, there are fewer ways for malicious attacks to be executed.
+* **Access to my content at all times in a convenient format**. Many website builders offer an easy drag and drop interface, but it might be difficult to transfer the content of your website from one platform to another and preserve the original formatting including images, text formatting, links, etc. It was also not clear what happens to my content if a website builder ceases to exist at some point. With an SSG all my images and posts (in human-readable Markdown format) are saved locally on my computer, and I can always move them to another platform, if needed.
+* **Fast load times**. Every time you request a page of a traditionally built website, it is built and loaded after the request is submitted. That might result in longer loading times. As I mentioned earlier, SSGs serve pre-built pages that significantly reduces the load time, even for content-heavy websites.
+* **Security**. As the infrastructure for serving a static website is simplified compared to a traditionally built website, there are fewer parts involved in building and serving it. Therefore, there are fewer ways for malicious attacks to be executed.
 
 Of course, it is important to remember that since the stages of generating the website’s pages and publishing them are separate when using a SSG, managing a static website requires more technical knowledge compared to a drag-and-drop website builder. If you are not afraid of learning the basics of HTML, CSS, and JavaScript, and working with the command line, I’d encourage you to give SSGs a try.
 
@@ -45,19 +45,15 @@ Whether you are going to use your custom domain or not, there are numerous platf
 
 In my case, I’m using a private repository on GitHub to host the content of my blog, and Netlify to build my website and publish it on the web. Both platforms offer free tiers for individuals.
 
-Write `Table of contents` in h2 format (## in markdown) and place it where you want it to be appeared on the post.
-
-For instance, if you want to place your table of contents just under the intro paragraph (like I usually do), you can do that in the following way.
-
 ### What tools do I need to run a static blog?
 
 Here is the list of software and services I’m using to run my website:
 
-Jekyll as my SSG platform. To design your blog, you can go for one of the free themes or buy one from a marketplace such as Envato Market or JekyllThemes.io.
-VS Code as my text editor. I’ve also recently started using Notion to draft my posts as it allows me to collect my ideas and add changes using multiple devices (laptop or phone). I can also export posts from Notion in Markdown format. However, Notion doesn’t support all elements of Markdown, so you might need to fix the formatting in a text editor afterwards.
-GitHub to store my content. If you are new to GitHub, I would recommend going through their learning guides first. If using the command line to interact with GitHub sounds intimidating, I’d suggest using GitHub’s Desktop client which makes adding and updating content in your repository much easier.
+* **Jekyll** as my SSG platform. To design your blog, you can go for one of the free themes or buy one from a marketplace such as Envato Market or JekyllThemes.io.
+* **VS Code** as my text editor. I’ve also recently started using Notion to draft my posts as it allows me to collect my ideas and add changes using multiple devices (laptop or phone). I can also export posts from Notion in Markdown format. However, Notion doesn’t support all elements of Markdown, so you might need to fix the formatting in a text editor afterwards.
+* **GitHub** to store my content. If you are new to GitHub, I would recommend going through their learning guides first. If using the command line to interact with GitHub sounds intimidating, I’d suggest using GitHub’s Desktop client which makes adding and updating content in your repository much easier.
 
-VS Code also integrates with GitHub natively, so you can connect and add content to your repository directly from the text editor.
+* **VS Code** also integrates with GitHub natively, so you can connect and add content to your repository directly from the text editor.
 
 Netlify to build and publish my blog on the web.
 
