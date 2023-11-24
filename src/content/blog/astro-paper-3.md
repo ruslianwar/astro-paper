@@ -1,6 +1,6 @@
 ---
 author: Rusli Anwar
-pubDatetime: 2023-11-23T13:22:00Z
+pubDatetime: 2022-09-18T13:22:00Z
 title: How I set up my blog using a Astro static site generator
 postSlug: how-i-set-up-my-blog-using-a-astro-static-site-generator
 featured: true
