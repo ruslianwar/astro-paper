@@ -3,34 +3,15 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+Hi, I’m Anwar 👋
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
-
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+I currently live in Sleman, Indonesia. I graduated from Yogyakarta Respati University, majoring in information technology. Experienced in an informal job for more than seven years as a Junior Search Engine Optimization Specialist, which focuses on creating SEO-friendly content to increase the number of visitors (organic traffic) and website ranking on the SERP (Search Engine Results Page). Skilled at rising keywords, site audits, optimizing SEO on-page, optimizing SEO off-page, and link building. In the optimization process, I utilized several SEO tools, such as Ahrefs, Semrush, Ubersuggest, MOZ, Google Analytics, and Google Search Console.
 
 <div>
   <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
 </div>
 
-## Tech Stack
+## TLDR
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
-
-## Features
-
-Here are certain features of this site.
-
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+If you want connect or message me,  
+Or you can even give any feedback via my [email](mailto:batekno.id@gmail.com).
