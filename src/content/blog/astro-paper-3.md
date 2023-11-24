@@ -1,173 +1,83 @@
 ---
-author: Sat Naing
-pubDatetime: 2023-09-25T10:25:54.547Z
-title: AstroPaper 3.0
-postSlug: astro-paper-v3
+author: Rusli Anwar
+pubDatetime: 2023-11-23T13:22:00Z
+title: How I set up my blog using a Astro static site generator
+postSlug: how-i-set-up-my-blog-using-a-astro-static-site-generator
 featured: true
-ogImage: https://github.com/satnaing/astro-paper/assets/53733092/1ef0cf03-8137-4d67-ac81-84a032119e3a
+draft: false
 tags:
-  - release
-description: "AstroPaper Version 3: Elevating Your Web Experience with Astro v3 and Seamless View Transitions"
+  - docs
+description:
+  Some rules & recommendations for set up blog using astro.
 ---
 
-We're excited to announce the release of AstroPaper v3, packed with new features, enhancements, and bug fixes to elevate your web development experience. Let's dive into the highlights of this release:
+Personal blogs are a great place to share your work and knowledge, and they have become a big part of the data analytics and visualization community. After trying several website builders such as Wix, Wordpress, and Squarespace, I decided to set up my blog using a static site generator instead.
 
-![AstroPaper v3](@assets/images/AstroPaper-v3.png)
+Recently, several people asked me about my blog’s setup, and what tools I’m using to run it. Instead of answering these questions individually, I decided that it was time to summarize this information in one post. Here I’m going to answer some of the most frequent questions about setting up a static website for your blog based on my experience.
+
+![Static Site generator Flow](@assets/images/ssgflow.png)
 
 ## Table of contents
 
-## Features & Changes
+## Site Generator (SSG)
 
-### Astro v3 Integration
+As you may know, in a traditional web application an end user (also called ‘client’) requests a webpage through a browser such as Chrome or Firefox, and a web server, upon receiving the request, assembles the data and resources that comprise the page (database calls, static assets such as images, etc.), and responds with an HTML webpage. This makes sense for websites that require dynamic content, for example, user-generated comments in a forum, but it’s overkill for a blog or portfolio page that doesn’t require interactivity or frequent updates.
 
-<video autoplay loop="loop" muted="muted" plays-inline="true">
-  <source src="https://github.com/satnaing/astro-paper/assets/53733092/18fdb604-1ca3-41a0-8372-1367759091ff" type="video/mp4">
-  <!-- <source src="/assets/docs/astro-paper-v3-view-transitions-demo.mp4" type="video/mp4"> -->
-</video>
+In contrast, a SSG builds all pages of a website in advance on your computer before they are uploaded to the server, so all pages are ready to be served as static files ahead of any actual request. This means that to serve your content there is no need for a more complicated server setup involving databases, caches, or reverse proxies. Once you have all pages of your website generated as static HTML and JavaScript files, you then upload those files to your server and make them available to everyone as your website.
 
-AstroPaper now fully supports [Astro v3](https://astro.build/blog/astro-3/), offering improved performance and rendering speed.
+Today there are over 400 different SSGs to choose from, with some of the most popular being Jekyll, Hugo, Gatsby, and Pelican. For my blog I chose Jekyll which uses the Ruby programming language under the hood. Jekyll is one of the most mature SSGs with an active community of contributors that have developed a rich ecosystem of plugins, themes, and other enhancements.
 
-Besides, we've added support for Astro's [ViewTransitions API](https://docs.astro.build/en/guides/view-transitions/), allowing you to create captivating and dynamic transitions between views.
+I would recommend reading this overview by Snipcart or this intro to SSGs by Netlify to understand how to choose the best SSG for your project. As the majority of SSGs are open-source, you can learn more by reading detailed documentation and help pages in their respective GitHub repositories.
 
-In the "Recent Section", only non-featured posts will be displayed to avoid duplications and better support for ViewTransitions API.
+### Why should I choose a static site generator for my website?
 
-### Update OG Image Generation Logic
+Here are some benefits of using SSGs that were important to me when I was choosing between a website builder and a SSG:
 
-![Example OG Image](https://user-images.githubusercontent.com/40914272/269252964-a0dc6735-80f7-41ed-8e74-4d4d70f96891.png)
+Access to my content at all times in a convenient format. Many website builders offer an easy drag and drop interface, but it might be difficult to transfer the content of your website from one platform to another and preserve the original formatting including images, text formatting, links, etc. It was also not clear what happens to my content if a website builder ceases to exist at some point. With an SSG all my images and posts (in human-readable Markdown format) are saved locally on my computer, and I can always move them to another platform, if needed.
+Fast load times. Every time you request a page of a traditionally built website, it is built and loaded after the request is submitted. That might result in longer loading times. As I mentioned earlier, SSGs serve pre-built pages that significantly reduces the load time, even for content-heavy websites.
+Security. As the infrastructure for serving a static website is simplified compared to a traditionally built website, there are fewer parts involved in building and serving it. Therefore, there are fewer ways for malicious attacks to be executed.
 
-We've updated the logic for automatic OG image generation, making it even more reliable and efficient. Besides, it now supports special characters in post titles, ensuring accurate, flexible and eye-catching social media previews.
+Of course, it is important to remember that since the stages of generating the website’s pages and publishing them are separate when using a SSG, managing a static website requires more technical knowledge compared to a drag-and-drop website builder. If you are not afraid of learning the basics of HTML, CSS, and JavaScript, and working with the command line, I’d encourage you to give SSGs a try.
 
-`SITE.ogImage` is now optional. If it is not specified, AstroPaper will automatically generate an OG image using `SITE.title`, `SITE.desc` and `SITE.website`
+## Where can I host my blog?
 
-### Theme meta tag
+Whether you are going to use your custom domain or not, there are numerous platforms that you can choose from to host your static website. This is a good overview of different options from Geekflare. When selecting which platform to go with, you’d need to consider not only the technical knowledge you need to have to manage it, but also the cost of the solution you will choose.
 
-The theme-color meta tag has been added to dynamically adapt to theme switches, ensuring a seamless user experience.
+In my case, I’m using a private repository on GitHub to host the content of my blog, and Netlify to build my website and publish it on the web. Both platforms offer free tiers for individuals.
 
-> Notice the difference at the top
+Write `Table of contents` in h2 format (## in markdown) and place it where you want it to be appeared on the post.
 
-**_AstroPaper v2 theme switch_**
+For instance, if you want to place your table of contents just under the intro paragraph (like I usually do), you can do that in the following way.
 
-<video autoplay loop="loop" muted="muted" plays-inline="true">
-  <source src="https://github.com/satnaing/astro-paper/assets/53733092/3ab5a1e8-1891-4264-a5bb-0ded69143c1a" type="video/mp4">
-</video>
+### What tools do I need to run a static blog?
 
-**_AstroPaper v3 theme switch_**
+Here is the list of software and services I’m using to run my website:
 
-<video autoplay loop="loop" muted="muted" plays-inline="true">
-  <source src="https://github.com/satnaing/astro-paper/assets/53733092/8ac9deb8-d1f8-4029-86bd-6aa0def380b4" type="video/mp4">
-</video>
+Jekyll as my SSG platform. To design your blog, you can go for one of the free themes or buy one from a marketplace such as Envato Market or JekyllThemes.io.
+VS Code as my text editor. I’ve also recently started using Notion to draft my posts as it allows me to collect my ideas and add changes using multiple devices (laptop or phone). I can also export posts from Notion in Markdown format. However, Notion doesn’t support all elements of Markdown, so you might need to fix the formatting in a text editor afterwards.
+GitHub to store my content. If you are new to GitHub, I would recommend going through their learning guides first. If using the command line to interact with GitHub sounds intimidating, I’d suggest using GitHub’s Desktop client which makes adding and updating content in your repository much easier.
 
-## Other Changes
+VS Code also integrates with GitHub natively, so you can connect and add content to your repository directly from the text editor.
 
-### Astro Prettier Plugin
+Netlify to build and publish my blog on the web.
 
-Astro Prettier Plugin is installed out-of-the-box in order to keep the project tidy and organized.
+## Bonus
 
-### Minor Style Changes
+### Image compression
 
-The single-line code block wrapping issue has been solved, making your code snippets look pristine.
+When you put images in the blog post (especially for images under `public` directory), it is recommended that the image is compressed. This will affect the overall performance of the website.
 
-Update nav style CSS to allow adding more nav links to the navigation.
+My recommendation for image compression sites.
 
-## Upgrade to AstroPaper v3
+- [TinyPng](https://tinypng.com/)
+- [TinyJPG](https://tinyjpg.com/)
 
-> This section is only for those who want to upgrade AstroPaper v3 from the older versions.
+### OG Image
 
-This section will help you migrate from AstroPaper v2 to AstroPaper v3.
+The default OG image will be placed if a post does not specify the OG image. Though not required, OG image related to the post should be specify in the frontmatter. The recommended size for OG image is **_1200 X 640_** px.
 
-Before reading the rest of the section, you might also want to check [this article](https://astro-paper.pages.dev/posts/how-to-update-dependencies/) for upgrading dependencies and AstroPaper.
+> Since AstroPaper v1.4.0, OG images will be generated automatically if not specified. Check out [the announcement](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/).
 
-## Option 1: Fresh Restart (recommended)
+## Conclusion
 
-In this release, a lot of changes have been made\_ replacing old Astro APIs with newer APIs, bug fixes, new features etc. Thus, if you are someone who didn't make customization very much, you should follow this approach.
-
-**_Step 1: Keep all your updated files_**
-
-It's important to keep all the files which have been already updated. These files include
-
-- `/src/config.ts` (didn't touch in v3)
-- `/src/styles/base.css` (minor changes in v3; mentioned below)
-- `/src/assets/` (didn't touch in v3)
-- `/public/assets/` (didn't touch in v3)
-- `/content/blog/` (it's your blog content directory 🤷🏻‍♂️)
-- Any other customizations you've made.
-
-```css
-/* file: /src/styles/base.css */
-@layer base {
-  /* Other Codes */
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-skin-card-muted;
-  }
-
-  /* Old code
-  code {
-    white-space: pre;
-    overflow: scroll;
-  } 
-  */
-
-  /* New code */
-  code,
-  blockquote {
-    word-wrap: break-word;
-  }
-  pre > code {
-    white-space: pre;
-  }
-}
-
-@layer components {
-  /* other codes */
-}
-```
-
-**_Step 1: Replace everything else with AstroPaper v3_**
-
-In this step, replace everything\_ except above files/directories (plus your customized files/directories)\_ with AstroPaper v3.
-
-**_Step 3: Schema Updates_**
-
-Keep in mind that `/src/content/_schemas.ts` has been replaced with `/src/content/config.ts`.
-
-Besides, there is no longer `BlogFrontmatter` type exported from `/src/content/config.ts`.
-
-Therefore, all the `BlogFrontmatter` type inside files need to be updated with `CollectionEntry<"blog">["data"]`.
-
-For example: `src/components/Card.tsx`
-
-```ts
-// AstroPaper v2
-import type { BlogFrontmatter } from "@content/_schemas";
-
-export interface Props {
-  href?: string;
-  frontmatter: BlogFrontmatter;
-  secHeading?: boolean;
-}
-```
-
-```ts
-// AstroPaper v3
-import type { CollectionEntry } from "astro:content";
-
-export interface Props {
-  href?: string;
-  frontmatter: CollectionEntry<"blog">["data"];
-  secHeading?: boolean;
-}
-```
-
-## Option 2: Upgrade using Git
-
-This approach is not recommended for most users. You should do the "Option 1" if you can. Only do this if you know how to resolve merge conflicts and you know what you're doing.
-
-Actually, I've already written a blog post for this case and you can check out [here](https://astro-paper.pages.dev/posts/how-to-update-dependencies/#updating-astropaper-using-git).
-
-## Outro
-
-Ready to explore the exciting new features and improvements in AstroPaper v3? Start [using AstroPaper](https://github.com/satnaing/astro-paper) now.
-
-For other bug fixes and integration updates, check out the [release notes](https://github.com/satnaing/astro-paper/releases/tag/v3.0.0) to learn more.
-
-If you encounter any bugs or face difficulties during the upgrade process, please feel free to open an issue or start a discussion on [GitHub](https://github.com/satnaing/astro-paper).
+I hope this gives you a good overview of why and how to use static site generators to set up your website. I’ll keep updating this post as and when I receive new questions in the future.
