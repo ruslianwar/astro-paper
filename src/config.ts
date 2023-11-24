@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://anwardev.batekno.com/", // replace this with your deployed domain
   author: "Anwar Rusli",
   desc: "Personal website using React.",
-  title: "AnwarPaper",
+  title: "Anwar Dev.",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
