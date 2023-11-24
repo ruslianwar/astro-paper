@@ -37,7 +37,6 @@ Here are some benefits of using SSGs that were important to me when I was choosi
 * **Fast load times**. Every time you request a page of a traditionally built website, it is built and loaded after the request is submitted. That might result in longer loading times. As I mentioned earlier, SSGs serve pre-built pages that significantly reduces the load time, even for content-heavy websites.
 * **Security**. As the infrastructure for serving a static website is simplified compared to a traditionally built website, there are fewer parts involved in building and serving it. Therefore, there are fewer ways for malicious attacks to be executed.
 
-> [!IMPORTANT]
 > Of course, it is important to remember that since the stages of generating the website’s pages and publishing them are separate when using a SSG, managing a static website requires more technical knowledge compared to a drag-and-drop website builder. If you are not afraid of learning the basics of HTML, CSS, and JavaScript, and working with the command line, I’d encourage you to give SSGs a try.
 
 ## Where can I host my blog?
