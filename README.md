@@ -19,7 +19,7 @@ _Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver**
 ## ✅ Lighthouse Score
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
+  <a href="https://pagespeed.web.dev/analysis/https-anwardev-batekno-com/gr6wthhe2k?form_factor=desktop">
     <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
   <a>
 </p>
