@@ -1,8 +1,8 @@
 ---
 author: Rusli Anwar
 pubDatetime: 2023-11-25T13:22:00Z
-title: How I set up my blog using a Astro static site generator
-postSlug: how-i-set-up-my-blog-using-a-astro-static-site-generator
+title: Apa itu KernelSU: Solusi Root Kernel-Based untuk Android
+postSlug: apa-itu-kernelsu-solusi-root-kernel-based-untuk-android
 featured: true
 draft: false
 tags:
