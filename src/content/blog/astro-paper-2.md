@@ -1,92 +1,76 @@
 ---
-author: Sat Naing
-pubDatetime: 2023-01-30T15:57:52.737Z
-title: AstroPaper 2.0
-postSlug: astro-paper-2
-featured: false
-draft: true
-ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
+author: Rusli Anwar
+pubDatetime: 2023-11-25T13:22:00Z
+title: How I set up my blog using a Astro static site generator
+postSlug: how-i-set-up-my-blog-using-a-astro-static-site-generator
+featured: true
+draft: false
 tags:
-  - release
-description: AstroPaper with the enhancements of Astro v2. Type-safe markdown contents, bug fixes and better dev experience etc.
+  - docs
+description:
+  Apa itu KernelSU dan bagaimana cara kerjanya.
 ---
 
-Astro 2.0 has been released with some cool features, breaking changes, DX improvements, better error overlay and so on. AstroPaper takes advantage of those cool features, especially Content Collections API.
+Melakukan rooting pada Android itu ibarat memberi kita kendali penuh dalam mengatur sistem operasi di ponsel kita. Kita bisa mengubah tampilan, menghapus aplikasi bawaan (bloatware) yang tidak penting, dan mengatur semuanya sesuai kebutuhan. Namun, rooting juga ada bahayanya kalau kamu itu belum memiliki pemahaman teknis dasar. Jika lengah bisa saja hp yang ingin di root malah menjadi softbrick sehingga menimbulkan error dan yang paling fatal adalah crash alias mati total.
 
-<!-- ![Introducing AstroPaper 2.0](https://user-images.githubusercontent.com/53733092/215683840-dc2502f5-8c5a-44f0-a26c-4e7180455056.png) -->
+Nah untuk itu ada developer asal negeri tirai bambu dengan akun github bernama Tiann, asal Shen Zhen, China, yang menciptakan metode rooting Android berbasis kernel bernama KernelSU. Kemudian, di bulan desember 2022 dia nge rilis untuk kali pertama dengan versi v0.1.3.
 
-![Introducing AstroPaper 2.0](https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png)
+KernelSU ibarat alat rooting yang mudah digunakan dan dikenal stabil. Cara kerjanya seperti menginstal patch pada kernel (dalam bahasa opreker, menambal kernel) perangkat Kita, yang memberi Kita akses penuh tanpa mengubah file sistem itu sendiri. Jadi, KernelSU diklaim lebih aman dibandingkan alat rooting serupa yang sudah kita kenal seperti SuperSU, Magisk ataupun Magisk Delta.
+
+![Static Site generator Flow](@assets/images/KernelSU-logo.png)
 
 ## Table of contents
 
-## Features & Changes
+## Apa itu KernelSU?
 
-### Type-safe Frontmatters and Redefined Blog Schema
+KernelSU adalah solusi root berbasis kernel untuk perangkat Generic Kernel Image Android. Metode ini bekerja dalam mode Linux kernel dan memberikan izin root ke aplikasi pada lapisan diatas userspace secara langsung di ruang kernel. KernelSU juga menyediakan sistem modul melalui overlayfs, yang memungkinkan untuk memuat module ke dalam sistem. KernelSU sendiri merupakan proyek open-source di bawah lisensi GPL-3.
 
-Frontmatter of AstroPaper 2.0 markdown contents are now type-safe thanks to Astro’s Content Collections. Blog schema is defined inside the `src/content/_schemas.ts` file.
+## Fitur KernelSU
 
-### New Home for Blog contents
+* **Berbasis kernel:** KernelSU bekerja dalam mode kernel dan tidak memerlukan aplikasi pengguna.
+* **Kontrol akses Whitelist:** Hanya aplikasi yang diberikan izin root yang dapat mengakses `su`, aplikasi lain tidak dapat mengakses `su`.
+* **Dukungan modul:** KernelSU mendukung modifikasi `/system` tanpa sistem melalui overlayfs, bahkan dapat membuat sistem dapat ditulis (R/W).
+* **KernelSU** juga menyediakan mekanisme untuk dapat memodifikasi berkas-berkas pada partisi `/system`.
 
-All the blog posts were moved from `src/contents` to `src/content/blog` directory.
+## Persyaratan Instalasi
 
-### New Fetch API
+Sebelum melakukan rooting menggunakan KernelSU ada beberapa hal yang harus diperhatikan, berikut ini syarat untuk dapat menggunakan KernelSU:
 
-Contents are now fetched with `getCollection` function. No relative path to the content needs to be specified anymore.
+* Perangkat harus menjalankan `Android 12` atau lebih tinggi.
+* Perangkat harus memiliki kernel versi `5.10` atau lebih tinggi.
+* Bootloader perangkat harus dalam keadaan sudah di-unlock.
+* Saya menyarankan perangkat yang kamu gunakan sudah memiliki `Custom Recovery`.
 
-```ts
-// old content fetching method
-- const postImportResult = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../contents/**/**/*.md",);
+Selain syarat di atas, ada beberapa hal yang perlu diperhatikan sebelum menggunakan KernelSU, yaitu:
 
-// new content fetching method
-+ const postImportResult = await getCollection("blog");
-```
+* KernelSU belum mendukung semua jenis perangkat Android.
+* KernelSU tidak selalu berfungsi dengan Custom ROM  terbaru. Jika Kamu menggunakan Custom ROM khusus, sebaiknya periksa apakah ROM tersebut sudah kompatibel dan tersedia dengan kernel yang mendukung KernelSU.
+* KernelSU dapat menyebabkan masalah terhadap aplikasi tertentu. Jika Kamu mengalami masalah dengan aplikasi tertentu setelah menginstal * KernelSU, Kamu dapat mencoba `A/B` testing atau mencopot pemasangan (Uninstall) KernelSU terlebih dahulu untuk melihat dan memastikan, apakah masalah tersebut dapat teratasi.
 
-### Modified Search Logic for better Search Result
+## Tahap Uji Coba Kompatibilitas
 
-In the older version of AstroPaper, when someone search some article, the search criteria keys that will be searched are `title`, `description` and `headings` (heading means all the headings h1 ~ h6 of the blog post). In AstroPaper v2, only `title` and `description` will be searched as the user types.
+Periksa apakah perangkat yang kamu gunakan sudah mendukung, dengan cara:
 
-### Renamed Frontmatter Properties
+1. Unduh aplikasi manajer KernelSU dari halaman resmi github releases, kemudian instal aplikasi dan buka aplikasi KernelSU.
+2. Setelah membukan, jika aplikasi menunjukkan pesan `Unsupported`, menandakan bahwa kamu harus mengkompilasi kernel perangkat kamu sendiri (tidak saya rekomendasikan) karena butuh pemahaman yang mendalam terkait build kernel itu sendiri.
+3. Namun, pesan yang menunjukkan `Not installed`, 95% maka perangkat kamu sudah mendukung KernelSU.
 
-The following frontmatter properties are renamed.
+**Catatan:** Disini saya tidak akan memberikan panduan dari awal melakukan instalasi, karena seperti yang sudah saya jelaskan diatas, bahwa belum banyak perangkat yang mendukung untuk melakukan rooting menggunakan KernelSU.
 
-| Old Names | New Names   |
-| --------- | ----------- |
-| datetime  | pubDatetime |
-| slug      | postSlug    |
+## Mengelola Izin Root dengan KernelSU
 
-### Default Tag for blog post
+Setelah Kamu melakukan root pada perangkat Kamu dengan KernelSU, Kamu dapat menggunakan aplikasi KernelSU untuk mengelola izin root. Kamu dapat mengaktifkan atau menonaktifkan akses root ke aplikasi, serta mengatur izin untuk masing-masing aplikasi yang ada dengan hanya sekali aksi.
 
-If a blog post doesn't have any tag (in other words, frontmatter property `tags` is not specified), the default tag `others` will be used for that blog post. But you can set the default tag in the `/src/content/_schemas.ts` file.
+Untuk mengelola dan mengizinkan akses root dengan KernelSU, buka aplikasi dan ketuk tab `SuperUser`. Kamu akan melihat daftar semua aplikasi di perangkat. Selanjutnya, kamu dapat mengaktifkan atau menonaktifkan akses root untuk setiap aplikasi dengan mengetuk tombol `SuperUser` di sebelah nama aplikasi tersebut, sesimpel itu.
 
-```ts
-// src/contents/_schemas.ts
-export const blogSchema = z.object({
-  // ---
-  // replace "others" with whatever you want
-  tags: z.array(z.string()).default(["others"]),
-  ogImage: z.string().optional(),
-  description: z.string(),
-});
-```
+## Pengalaman Menggunakan KernelSU
 
-### New Predefined Dark Color Scheme
+Selama kurang lebih 10 bulan sejak pertama kali menggunakan KernelSU (Februari 2023), saya hanya mendapati beberapa masalah kecil yang mampu saya perbaiki sendiri, terlebih dengan tampilan dan menu yang sederhana tentu hal ini menjadi nilai tambah bagi KernelSU. Sejak pertama kali nge-root dan nge-unlock ditahun awal-awal 2011, dari semua metode root yang pernah saya coba, yang praktis dan aman bisa dibilang, KernelSU sebagai juaranya. Walaupun, bisa dibilang metode ini terasa familiar dengan Magisk delta namun hal yang mendasari keduanya adalah metode rootingnya. KernelSU bekerja dengan memodifikasi pada kernel, sedangkan Magisk Delta bekerja dengan memodifikasi kode sumber Magisk itu sendiri.
 
-AstroPaper v2 has a new dark color scheme (high contrast & low contrast) which is based on Astro's dark logo. Check out [this link](https://astro-paper.pages.dev/posts/predefined-color-schemes#astro-dark) for more info.
+## Kesimpulan
 
-![New Predefined Dark Color Scheme](https://user-images.githubusercontent.com/53733092/215680520-59427bb0-f4cb-48c0-bccc-f182a428d72d.svg)
+Melakukan rooting perangkat Android dengan KernelSU adalah proses yang relatif aman dan mudah. Namun, penting untuk diingat bahwa rooting memiliki beberapa risiko. Jika tidak nyaman dengan risikonya, sebaiknya biarkan perangkat Kamu tidak di-root dan biarkan dalam kondisi default.
 
-### Automatic Class Sorting
+Jika Kamu memutuskan untuk melakukan root pada perangkat Kamu dengan KernelSU, dan siap menerima risiko yang ada, pastikan untuk mengikuti instruksi dengan seksama. Dan yang terpenting, pastikan untuk membuat cadangan data (backup data) sebelum memulai rooting. Dengan cara ini, jika terjadi kesalahan, Kamu dapat mengembalikan perangkat ke keadaan semula.
 
-AstroPaper 2.0 includes automatic class sorting with [TailwindCSS Prettier plugin](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
-
-### Updated Docs & README
-
-All the [#docs](https://astro-paper.pages.dev/tags/docs/) blog posts and [README](https://github.com/satnaing/astro-paper#readme) are updated for this AstroPaper v2.
-
-## Bug Fixes
-
-- fix broken tags in the Blog Post page
-- in a tag page, the last part of the breadcrumb is now updated to lower-case for consistency
-- exclude draft posts in a tag page
-- fix 'onChange value not updating issue' after a page reload
+Saya harap artikel ini bermanfaat! Jika memiliki pertanyaan tentang rooting perangkat Android dengan KernelSU, feel free to contact me.
