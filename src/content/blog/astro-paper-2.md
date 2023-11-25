@@ -1,7 +1,7 @@
 ---
 author: Rusli Anwar
 pubDatetime: 2023-11-25T13:22:00Z
-title: Apa itu KernelSU: Solusi Root Kernel-Based untuk Android
+title: Apa itu KernelSU? Solusi Root Kernel-Based untuk Android
 postSlug: apa-itu-kernelsu-solusi-root-kernel-based-untuk-android
 featured: true
 draft: false
