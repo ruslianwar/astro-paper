@@ -15,7 +15,7 @@ Melakukan rooting pada Android itu ibarat memberi kita kendali penuh dalam menga
 
 Nah untuk itu ada developer asal negeri tirai bambu dengan akun github bernama Tiann, asal Shen Zhen, China, yang menciptakan metode rooting Android berbasis kernel bernama KernelSU. Kemudian, di bulan desember 2022 dia nge rilis untuk kali pertama dengan versi v0.1.3.
 
-KernelSU ibarat alat rooting yang mudah digunakan dan dikenal stabil. Cara kerjanya seperti menginstal patch pada kernel (dalam bahasa opreker, menambal kernel) perangkat Kita, yang memberi Kita akses penuh tanpa mengubah file sistem itu sendiri. Jadi, KernelSU diklaim lebih aman dibandingkan alat rooting serupa yang sudah kita kenal seperti SuperSU, Magisk ataupun Magisk Delta.
+KernelSU ibarat alat rooting yang mudah digunakan dan dikenal stabil. Cara kerjanya seperti menambal sebuah kernel (dalam bahasa opreker, menginstal patch atau patching) perangkat Kita, yang memberi Kita akses penuh tanpa mengubah file sistem itu sendiri. Jadi, KernelSU diklaim lebih aman dibandingkan alat rooting serupa yang sudah kita kenal seperti SuperSU, Magisk ataupun Magisk Delta.
 
 ![Static Site generator Flow](@assets/images/KernelSU-logo.png)
 
