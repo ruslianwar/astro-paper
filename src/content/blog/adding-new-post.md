@@ -1,6 +1,6 @@
 ---
 author: Rusli Anwar
-pubDatetime: 2023-06-19T122:42:00Z
+pubDatetime: 2023-06-19T22:42:00Z
 title: Apa itu ChatGPT OpenAI?
 postSlug: apa-itu-chatgpt-openai
 featured: true
