@@ -337,5 +337,6 @@ val_accuracy = history.history['val_accuracy'][-1]
 print(f'Validation Accuracy: {val_accuracy * 100:.2f}%')
 ```
 ```
-Validation Accuracy: 100.00% :+1:
+Validation Accuracy: 100.00%
 ```
+Thank you :sunglasses:
