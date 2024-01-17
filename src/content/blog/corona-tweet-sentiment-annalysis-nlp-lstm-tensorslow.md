@@ -88,10 +88,15 @@ Buat direktori untuk kaggle.json
 ```python
 df=pd.read_csv('/content/Corona_NLP_test.csv', encoding='latin1')
 df
+```
+![nlp test](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/nlp%20test.png)
 
+```python
 df=pd.read_csv('/content/Corona_NLP_train.csv', encoding='latin1')
 df
 ```
+![nlp train](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/nlp%20train.png)
+
 ```python
 #Load datasets
 train_data = pd.read_csv("Corona_NLP_train.csv", usecols=["OriginalTweet", "Sentiment"], encoding='ISO-8859-1')
@@ -133,7 +138,7 @@ test_data['Sentiment'] = test_data['Sentiment'].map(label_mapping)
 ```
 
 ## Natural Language Processing (NLP) dan Word Embedding
-Dalam kode di bawah ini, terdapat fungsi data_cleaner yang dirancang untuk membersihkan dan memproses teks pada kolom 'OriginalTweet' dalam data latih dan uji. Fungsi ini dapat diartikan sebagai tahap pra-pemrosesan dalam pengolahan data teks sebelum digunakan untuk pelatihan atau evaluasi model machine learning, khususnya pada tugas seperti klasifikasi teks.
+Dalam kode di bawah ini, terdapat fungsi data_cleaner yang dirancang untuk membersihkan dan memproses teks pada kolom **'OriginalTweet'** dalam data latih dan uji. Fungsi ini dapat diartikan sebagai tahap pra-pemrosesan dalam pengolahan data teks sebelum digunakan untuk pelatihan atau evaluasi model machine learning, khususnya pada tugas seperti klasifikasi teks.
 
 ```python
 def data_cleaner(text):
@@ -287,4 +292,50 @@ history = model.fit(
     callbacks=[reduce_lr, custom_callback] + callbacks
 )
 ```
+![melatih model](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/2024-01-17_17-37.png)
 
+## Membuat Plot Diagram
+
+```python
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 2, 1)
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'], linestyle='--')
+plt.title('Accuracy Model')
+plt.ylabel('Accuracy')
+plt.xlabel('Epoch')
+plt.legend(['Training Set', 'Validation Set'])
+plt.grid(linestyle='--', linewidth=1, alpha=0.5)
+
+plt.subplot(1, 2, 2)
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'], linestyle='--')
+plt.title('Loss Model')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['Training Set', 'Validation Set'])
+plt.grid(linestyle='--', linewidth=1, alpha=0.5)
+
+plt.show()
+```
+![plot diagram](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/2024-01-17_17-39.png)
+
+## Evaluasi Model
+
+```python
+test_loss, test_accuracy = model.evaluate(padded_test, test_labels)
+print(f"Test Loss: {test_loss}, Test Accuracy: {test_accuracy}")
+```
+```
+119/119 [==============================] - 12s 97ms/step - loss: 2.2684e-06 - accuracy: 1.0000
+Test Loss: 2.2684216673951596e-06, Test Accuracy: 1.0
+```
+## Validasi Akurasi
+```python
+val_accuracy = history.history['val_accuracy'][-1]
+print(f'Validation Accuracy: {val_accuracy * 100:.2f}%')
+```
+```
+Validation Accuracy: 100.00% :+1:
+```
