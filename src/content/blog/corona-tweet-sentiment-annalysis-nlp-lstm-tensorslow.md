@@ -339,4 +339,14 @@ print(f'Validation Accuracy: {val_accuracy * 100:.2f}%')
 ```
 Validation Accuracy: 100.00%
 ```
+
+## Sumber Referensi
+
+1. https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification/data
+1. https://medium.com/analytics-vidhya/sentiment-analysis-movies-reviews-b299de4bb1aa
+1. https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-4-count-vectorizer-b3f4944e51b5
+1. https://github.com/Kaggle/kaggle-api
+1. https://towardsdatascience.com/methods-for-dealing-with-imbalanced-data-5b761be45a18
+1. https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM
+
 Thank you :sunglasses:
