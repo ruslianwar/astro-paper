@@ -89,13 +89,13 @@ Buat direktori untuk kaggle.json
 df=pd.read_csv('/content/Corona_NLP_test.csv', encoding='latin1')
 df
 ```
-![nlp test](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/nlp%20test.png)
+![nlp test](@assets/images/nlptest.png)
 
 ```python
 df=pd.read_csv('/content/Corona_NLP_train.csv', encoding='latin1')
 df
 ```
-![nlp train](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/nlp%20train.png)
+![nlp train](@assets/images/nlptrain.png)
 
 ```python
 #Load datasets
@@ -292,7 +292,7 @@ history = model.fit(
     callbacks=[reduce_lr, custom_callback] + callbacks
 )
 ```
-![melatih model](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/2024-01-17_17-37.png)
+![hasillatih](@assets/images/hasil-latih.png)
 
 ## Membuat Plot Diagram
 
@@ -319,7 +319,7 @@ plt.grid(linestyle='--', linewidth=1, alpha=0.5)
 
 plt.show()
 ```
-![plot diagram](https://github.com/ruslianwar/astro-paper/blob/main/src/assets/images/2024-01-17_17-39.png)
+![pltdg](@assets/images/plotdg.png)
 
 ## Evaluasi Model
 
