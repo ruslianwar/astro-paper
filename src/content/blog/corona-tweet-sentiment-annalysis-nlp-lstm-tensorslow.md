@@ -31,8 +31,8 @@ Natural Language Processing (NLP) adalah cabang kecerdasan buatan yang berfokus 
 ## Persiapan Datasets
 Data yang digunakan dalam pengujian ini menggunakan dataset dari situs Kaggle.
 
-**1. Datasets URL:** ![https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification/data](https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification/data)
-**1. Total dataset:** 44955 Sampel
+**1. Datasets URL:** https://www.kaggle.com/datasets/datatattle/covid-19-nlp-text-classification/data
+**2. Total dataset:** 44955 Sampel
 
 ## Import Library
 
